@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otavio H. Silva | Psicólogo CRP 06/194908</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    :root {
+      --color-petrol: #5a7275;
+      --color-sage: #8a9fa3;
+      --color-gray: #3d4d50;
+      --color-cream: #e5eaeb;
+      --color-warm-white: #eff3f4;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    
+    .font-sans {
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+    
+    .text-petrol {
+      color: var(--color-petrol);
+    }
+    
+    .text-sage {
+      color: var(--color-sage);
+    }
+    
+    .text-gray {
+      color: var(--color-gray);
+    }
+    
+    .bg-cream {
+      background-color: var(--color-cream);
+    }
+    
+    .bg-warm-white {
+      background-color: var(--color-warm-white);
+    }
+    
+    .bg-petrol {
+      background-color: var(--color-petrol);
+    }
+    
+    .border-petrol {
+      border-color: var(--color-petrol);
+    }
+    
+    .organic-shape {
+      position: absolute;
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+    
+    .organic-shape-2 {
+      border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-petrol);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .btn-primary {
+      background-color: var(--color-petrol);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #2d4545;
+      transform: translateY(-1px);
+    }
+    
+    .btn-outline {
+      border: 1px solid var(--color-petrol);
+      color: var(--color-petrol);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--color-petrol);
+      color: white;
+    }
+    
+    .section-divider {
+      width: 40px;
+      height: 1px;
+      background-color: var(--color-sage);
+      opacity: 0.6;
+    }
+    
+    .photo-placeholder {
+      background: linear-gradient(135deg, var(--color-cream) 0%, #e8e4df 100%);
+      border: 1px solid rgba(61, 90, 90, 0.1);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-sans bg-cream text-gray">
+  <div id="app" class="h-full overflow-auto"><!-- Floating WhatsApp Button --> <a href="#" id="floating-whatsapp" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+    <svg width="28" height="28" viewbox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></a> <!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center"><a href="#home" class="font-serif text-xl text-petrol tracking-wide" id="nav-name">OTAVIO H. SILVA</a>
+     <div class="hidden md:flex items-center gap-6 lg:gap-7"><a href="#home" class="nav-link text-sm tracking-wide text-gray hover:text-petrol whitespace-nowrap">Início</a> <a href="#sobre" class="nav-link text-sm tracking-wide text-gray hover:text-petrol whitespace-nowrap">Sobre</a> <a href="#especialidades" class="nav-link text-sm tracking-wide text-gray hover:text-petrol whitespace-nowrap">Como posso ajudar</a> <a href="#psicoterapia" class="nav-link text-sm tracking-wide text-gray hover:text-petrol whitespace-nowrap">TCC</a> <a href="#contato" class="nav-link text-sm tracking-wide text-gray hover:text-petrol whitespace-nowrap">Contato</a>
+     </div><button id="mobile-menu-btn" class="md:hidden text-petrol">
+      <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg></button>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-petrol/10">
+     <div class="px-6 py-4 flex flex-col gap-4"><a href="#home" class="text-sm tracking-wide text-gray hover:text-petrol">Início</a> <a href="#sobre" class="text-sm tracking-wide text-gray hover:text-petrol">Sobre</a> <a href="#especialidades" class="text-sm tracking-wide text-gray hover:text-petrol">Como posso ajudar</a> <a href="#psicoterapia" class="text-sm tracking-wide text-gray hover:text-petrol">TCC</a> <a href="#contato" class="text-sm tracking-wide text-gray hover:text-petrol">Contato</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen flex items-center bg-warm-white overflow-hidden"><!-- Organic shapes -->
+    <div class="organic-shape bg-petrol w-96 h-96 -top-20 -right-20"></div>
+    <div class="organic-shape organic-shape-2 bg-sage w-80 h-80 bottom-20 -left-20"></div>
+    <div class="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
+     <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="order-2 md:order-1">
+       <p class="text-sm tracking-widest text-sage mb-4 animate-fade-in animate-delay-1">PSICOLOGIA CLÍNICA</p>
+       <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-petrol mb-4 animate-fade-in animate-delay-2" id="hero-name">OTAVIO H. SILVA</h1>
+       <p class="text-sm tracking-wide text-gray mb-6 animate-fade-in animate-delay-2" id="hero-crp">Psicólogo | CRP 06/194908</p>
+       <p class="font-serif text-2xl md:text-3xl text-gray/80 italic mb-10 animate-fade-in animate-delay-3" id="hero-tagline">Psicoterapeuta Cognitivo Comportamental</p>
+       <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-4"><a href="#contato" class="btn-primary px-8 py-3 text-sm tracking-wide text-center" id="hero-cta">Agendar sessão</a> <a href="#sobre" class="btn-outline px-8 py-3 text-sm tracking-wide text-center">Conhecer mais</a>
+       </div>
+      </div>
+      <div class="order-1 md:order-2 flex justify-center">
+       <div class="w-72 h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] animate-fade-in overflow-hidden relative"><img src="https://i.imgur.com/EKe88I5.png" alt="Otavio H. Silva - Psicólogo" loading="lazy" class="w-full h-full object-contain relative z-10" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'photo-placeholder w-full h-full flex items-center justify-center\'><p class=\'text-xs text-gray/50\'>Foto temporariamente indisponível</p></div>';">
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-white via-warm-white/60 to-transparent z-20 pointer-events-none" style="background: linear-gradient(to top, #eff3f4 0%, rgba(239, 243, 244, 0.6) 40%, transparent 100%);"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sobre Section -->
+   <section id="sobre" class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="organic-shape organic-shape-2 bg-petrol w-64 h-64 top-20 right-10"></div>
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="mb-12 scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">SOBRE</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6" id="about-title">Sobre</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8 md:gap-12 scroll-reveal">
+      <div class="md:col-span-2 space-y-6 text-gray leading-relaxed">
+       <p>Sou psicólogo clínico com formação em Psicoterapia Cognitivo Comportamental, uma abordagem reconhecida cientificamente por sua eficácia no tratamento de diversas questões emocionais e comportamentais.</p>
+       <p>Minha prática é fundamentada na escuta atenta e na construção de um vínculo terapêutico genuíno. Acredito que o processo psicoterapêutico é, antes de tudo, um encontro entre duas pessoas — e que esse encontro, quando baseado em confiança e respeito, pode ser profundamente transformador.</p>
+       <p>Trabalho com adultos que buscam compreender melhor seus padrões de pensamento e comportamento, desenvolver habilidades emocionais e construir uma vida mais alinhada com seus valores pessoais.</p>
+       <p class="text-sm text-sage italic">Atendimento online para todo o mundo.</p>
+      </div>
+      <div class="space-y-6">
+       <div>
+        <p class="text-xs tracking-widest text-sage mb-2">FORMAÇÃO</p>
+        <p class="text-sm text-gray">Graduação em Psicologia</p>
+        <p class="text-sm text-gray">Especialização em TCC</p>
+       </div>
+       <div>
+        <p class="text-xs tracking-widest text-sage mb-2">REGISTRO</p>
+        <p class="text-sm text-gray" id="about-crp">CRP 06/194908</p>
+       </div>
+       <div>
+        <p class="text-xs tracking-widest text-sage mb-2">ABORDAGEM</p>
+        <p class="text-sm text-gray">Terapia Cognitivo Comportamental</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Especialidades Section -->
+<section id="especialidades" class="py-24 md:py-32 bg-warm-white relative overflow-hidden">
+  <div class="organic-shape bg-sage w-72 h-72 top-20 right-10"></div>
+
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Cabeçalho -->
+    <div class="mb-16 text-center scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">ÁREAS DE ATUAÇÃO</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">
+        Como posso ajudar você
+      </h2>
+      <p class="text-gray mt-4 max-w-2xl mx-auto leading-relaxed">
+        Atendo adultos que enfrentam diferentes formas de sofrimento emocional,
+        dificuldades nos relacionamentos e desafios pessoais ou profissionais.
+        <br><br>
+        E também pessoas que simplesmente desejam um espaço seguro de escuta,
+        sem julgamentos e com total sigilo profissional.
+      </p>
+      <div class="section-divider mx-auto mt-6"></div>
+    </div>
+
+    <!-- Lista -->
+    <div class="space-y-4">
+
+      <!-- Ansiedade -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Ansiedade e Crises de Ansiedade
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Acompanhamento para ansiedade generalizada, crises de ansiedade,
+            preocupações excessivas e sintomas físicos associados.
+          </p>
+        </div>
+      </div>
+
+      <!-- Depressão -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Depressão e Tristeza Persistente
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Trabalho com sintomas depressivos, tristeza persistente,
+            desânimo, perda de interesse e alterações de humor.
+          </p>
+        </div>
+      </div>
+
+      <!-- Transtornos -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Transtorno do Pânico, TOC e Oscilações de Humor
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Atendimento para transtorno do pânico, pensamentos intrusivos,
+            transtorno obsessivo-compulsivo (TOC) e alterações de humor.
+          </p>
+        </div>
+      </div>
+
+      <!-- Burnout -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Burnout e Esgotamento Profissional
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Acompanhamento para esgotamento emocional, excesso de cobrança,
+            estresse ocupacional e impacto do trabalho na saúde mental.
+          </p>
+        </div>
+      </div>
+
+      <!-- Relacionamentos -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Relacionamentos e Vínculos Afetivos
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Dificuldades nos relacionamentos amorosos, familiares e profissionais,
+            padrões relacionais repetitivos e comunicação interpessoal.
+          </p>
+        </div>
+      </div>
+
+      <!-- Autoestima -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Autoestima e Autoconfiança
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Construção de uma relação mais saudável consigo mesmo,
+            fortalecimento da autoconfiança e desenvolvimento do autoconhecimento.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vida Profissional -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Vida Profissional, Carreira e Orientação Profissional
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Orientação profissional, transições de carreira, desmotivação no trabalho,
+            desenvolvimento de habilidades emocionais e tomada de decisão.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sono -->
+      <div class="bg-cream scroll-reveal">
+        <button class="specialty-question w-full text-left p-6 flex items-center justify-between hover:bg-warm-white transition-colors">
+          <span class="font-serif text-lg text-petrol pr-8">
+            Distúrbios do Sono
+          </span>
+          <svg class="specialty-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="specialty-answer hidden px-6 pb-6">
+          <p class="text-gray leading-relaxed">
+            Insônia, dificuldades para iniciar ou manter o sono,
+            sono não reparador e higiene do sono.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-20 scroll-reveal">
+        <p class="text-gray max-w-2xl mx-auto mb-6">
+          Se você não encontrou exatamente o que procura, isso não significa
+          que a psicoterapia não seja para você. Podemos conversar e avaliar
+          juntos se o acompanhamento faz sentido para o seu momento.
+        </p>
+        <a href="#contato" class="inline-block bg-petrol text-white px-8 py-4 rounded-full hover:opacity-90 transition">
+          Agendar sessão
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+   </section><!-- Psicoterapia Section -->
+   <section id="psicoterapia" class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="organic-shape bg-petrol w-72 h-72 -bottom-10 left-1/4"></div>
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="mb-12 scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">ABORDAGEM</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">Psicoterapia Cognitivo Comportamental (TCC)</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="space-y-16">
+      <div class="grid md:grid-cols-4 gap-6 scroll-reveal">
+       <div class="md:col-span-1">
+        <h3 class="font-serif text-lg text-petrol">O que é a TCC</h3>
+       </div>
+       <div class="md:col-span-3 space-y-4 text-gray leading-relaxed">
+        <p>A <strong>Terapia Cognitivo Comportamental (TCC)</strong> é uma abordagem psicoterapêutica estruturada e baseada em evidências científicas. Ela parte do princípio de que nossos pensamentos, emoções e comportamentos estão profundamente interligados e influenciam a forma como percebemos e reagimos às situações do dia a dia</p>
+        <p>Ao identificar padrões de pensamento disfuncionais, o processo terapêutico possibilita desenvolver interpretações mais funcionais e respostas emocionais e comportamentais mais saudáveis.</p>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6 scroll-reveal">
+       <div class="md:col-span-1">
+        <h3 class="font-serif text-lg text-petrol">Para quem é indicada</h3>
+       </div>
+       <div class="md:col-span-3 space-y-4 text-gray leading-relaxed">
+        <p>A <strong>TCC</strong> é eficaz no tratamento de <strong>ansiedade, depressão, estresse, transtorno do pânico, fobia social</strong>, questões relacionais e outras dificuldades emocionais. É indicada para pessoas que desejam compreender melhor seus próprios padrões internos, desenvolver estratégias práticas de enfrentamento e construir uma vida mais equilibrada e alinhada com seus valores.</p>
+        <p>Trabalho com adultos que buscam <strong>psicoterapia online</strong> com foco em autoconhecimento, equilíbrio emocional e qualidade de vida.</p>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6 scroll-reveal">
+       <div class="md:col-span-1">
+        <h3 class="font-serif text-lg text-petrol">Como funciona</h3>
+       </div>
+       <div class="md:col-span-3 space-y-4 text-gray leading-relaxed">
+        <p>O processo terapêutico tem início com uma avaliação cuidadosa da sua história, das demandas atuais e dos objetivos que você deseja trabalhar.</p>
+        <p>As sessões são realizadas <strong>online, por meio de videochamadas seguras e confidenciais</strong>, com duração de 50 minutos e frequência semanal. Ao longo do acompanhamento, utilizo técnicas específicas da Terapia Cognitivo-Comportamental, sempre adaptadas às suas necessidades individuais.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Como Funciona Section -->
+   <section id="como-funciona" class="py-24 md:py-32 bg-warm-white relative overflow-hidden">
+    <div class="organic-shape organic-shape-2 bg-sage w-64 h-64 bottom-20 right-20"></div>
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="mb-16 text-center scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">PROCESSO</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">Como Funciona o Atendimento</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="space-y-8">
+      <div class="flex gap-6 scroll-reveal">
+       <div class="flex-shrink-0 w-16 h-16 bg-petrol text-white rounded-full flex items-center justify-center font-serif text-2xl">
+        1
+       </div>
+       <div>
+        <h3 class="font-serif text-xl text-petrol mb-3">Primeiro Contato</h3>
+        <p class="text-gray leading-relaxed">Entre em contato pelo WhatsApp. Vamos conversar sobre suas necessidades e esclarecer dúvidas iniciais sobre o processo terapêutico.</p>
+       </div>
+      </div>
+      <div class="flex gap-6 scroll-reveal">
+       <div class="flex-shrink-0 w-16 h-16 bg-petrol text-white rounded-full flex items-center justify-center font-serif text-2xl">
+        2
+       </div>
+       <div>
+        <h3 class="font-serif text-xl text-petrol mb-3">Agendamento</h3>
+        <p class="text-gray leading-relaxed">Escolhemos juntos o melhor horário para você. Envio o link da videochamada e orientações para a primeira sessão.</p>
+       </div>
+      </div>
+      <div class="flex gap-6 scroll-reveal">
+       <div class="flex-shrink-0 w-16 h-16 bg-petrol text-white rounded-full flex items-center justify-center font-serif text-2xl">
+        3
+       </div>
+       <div>
+        <h3 class="font-serif text-xl text-petrol mb-3">Avaliação Inicial</h3>
+        <p class="text-gray leading-relaxed">Na primeira sessão, fazemos uma avaliação completa: sua história, questões atuais e expectativas com a terapia. É um momento de nos conhecermos.</p>
+       </div>
+      </div>
+      <div class="flex gap-6 scroll-reveal">
+       <div class="flex-shrink-0 w-16 h-16 bg-petrol text-white rounded-full flex items-center justify-center font-serif text-2xl">
+        4
+       </div>
+       <div>
+        <h3 class="font-serif text-xl text-petrol mb-3">Plano Terapêutico</h3>
+        <p class="text-gray leading-relaxed">Juntos, construímos objetivos terapêuticos claros e estabelecemos a frequência das sessões (geralmente semanal).</p>
+       </div>
+      </div>
+      <div class="flex gap-6 scroll-reveal">
+       <div class="flex-shrink-0 w-16 h-16 bg-petrol text-white rounded-full flex items-center justify-center font-serif text-2xl">
+        5
+       </div>
+       <div>
+        <h3 class="font-serif text-xl text-petrol mb-3">Acompanhamento</h3>
+        <p class="text-gray leading-relaxed">Seguimos trabalhando juntos, aplicando técnicas da TCC, desenvolvendo habilidades e promovendo mudanças significativas na sua vida.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Atendimento Section -->
+   <section id="atendimento" class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="organic-shape organic-shape-2 bg-petrol w-56 h-56 top-1/3 -right-10"></div>
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="mb-12 scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">MODALIDADE</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">Atendimento</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12 scroll-reveal">
+      <div class="space-y-6 text-gray leading-relaxed">
+       <p>Realizo atendimento psicológico exclusivamente online, por meio de videochamadas seguras. Essa modalidade permite maior flexibilidade de horários e acesso ao cuidado psicológico a partir de qualquer lugar, mantendo a qualidade, a profundidade e a ética do atendimento clínico.</p>
+       <p>Para que o processo terapêutico aconteça de forma adequada, é importante que o paciente esteja em um ambiente privado e silencioso, com boa conexão de internet e um dispositivo com câmera e microfone funcionando corretamente.</p>
+       <p>Atendo adultos a partir de 18 anos, com sessões individuais e horário previamente agendado.</p>
+      </div>
+      <div class="bg-warm-white p-8 space-y-6">
+       <div class="flex items-start gap-4">
+        <div class="w-8 h-8 flex items-center justify-center text-petrol flex-shrink-0">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line>
+         </svg>
+        </div>
+        <div>
+         <p class="text-sm font-medium text-petrol mb-1">Atendimento Online</p>
+         <p class="text-sm text-gray">Sessões por videochamada, com atendimento online para todo o Brasil e exterior</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4">
+        <div class="w-8 h-8 flex items-center justify-center text-petrol flex-shrink-0">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle> <polyline points="12 6 12 12 16 14"></polyline>
+         </svg>
+        </div>
+        <div>
+         <p class="text-sm font-medium text-petrol mb-1">Duração da Sessão</p>
+         <p class="text-sm text-gray">Até 50 minutos</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4">
+        <div class="w-8 h-8 flex items-center justify-center text-petrol flex-shrink-0">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"></rect> <line x1="16" y1="2" x2="16" y2="6"></line> <line x1="8" y1="2" x2="8" y2="6"></line> <line x1="3" y1="10" x2="21" y2="10"></line>
+         </svg>
+        </div>
+        <div>
+         <p class="text-sm font-medium text-petrol mb-1">Frequência</p>
+         <p class="text-sm text-gray">Sessões semanais, quinzenais ou mensais</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4">
+        <div class="w-8 h-8 flex items-center justify-center text-petrol flex-shrink-0">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4"></circle>
+         </svg>
+        </div>
+        <div>
+         <p class="text-sm font-medium text-petrol mb-1">Público</p>
+         <p class="text-sm text-gray">Adultos (18+)</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- FAQ Section -->
+   <section id="faq" class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="organic-shape bg-sage w-72 h-72 top-1/4 -left-10"></div>
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="mb-16 text-center scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">DÚVIDAS</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">Perguntas Frequentes</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="space-y-4">
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Quanto tempo dura o tratamento?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">A duração do tratamento varia de acordo com as necessidades individuais de cada pessoa. Alguns processos podem durar alguns meses, enquanto outros se estendem por mais tempo. Na avaliação inicial, conversamos sobre suas expectativas e estabelecemos objetivos que nos ajudam a estimar a duração do acompanhamento.</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Como funciona o sigilo profissional?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">O sigilo é uma das bases fundamentais da prática psicológica e está previsto no Código de Ética Profissional do Psicólogo. Tudo o que é conversado nas sessões é absolutamente confidencial. Informações só são compartilhadas com sua autorização expressa ou em situações específicas previstas em lei (como risco iminente de vida).</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Qual o valor das sessões?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">Os valores são informados no primeiro contato pelo WhatsApp. Trabalho com valores acessíveis e, em alguns casos, posso avaliar a possibilidade de valores sociais. Entre em contato para conversarmos sobre investimento e formas de pagamento.</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Aceita convênio ou realiza reembolso?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">Não trabalho diretamente com convênios. No entanto, forneço recibos que podem ser utilizados para solicitação de reembolso junto ao seu plano de saúde, caso ele ofereça essa modalidade. Consulte seu convênio para verificar as condições de reembolso.</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Posso fazer terapia mesmo tomando medicação?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">Sim! A psicoterapia e o tratamento medicamentoso (quando necessário) são complementares. Muitas vezes, a combinação dos dois tratamentos traz resultados ainda mais efetivos. Se você faz acompanhamento psiquiátrico, podemos trabalhar de forma integrada respeitando ambos os tratamentos.</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Posso cancelar ou remarcar uma sessão?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">Sim, desde que o aviso seja feito com pelo menos 24 horas de antecedência. Cancelamentos feitos com menos de 24 horas de antecedência ou faltas sem aviso prévio serão cobrados normalmente, pois o horário estava reservado para você.</p>
+       </div>
+      </div>
+      <div class="bg-warm-white scroll-reveal"><button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream transition-colors"> <span class="font-serif text-lg text-petrol pr-8">Preciso de equipamento especial para as sessões online?</span>
+        <svg class="faq-icon w-6 h-6 text-petrol flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg></button>
+       <div class="faq-answer hidden px-6 pb-6">
+        <p class="text-gray leading-relaxed">Não. Você so precisa de um dispositivo com câmera e microfone (computador, tablet ou celular), conexão estável de internet e um ambiente privado e silencioso. As sessões são realizadas por videochamada em plataforma segura.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contato Section -->
+   <section id="contato" class="py-24 md:py-32 bg-warm-white relative overflow-hidden">
+    <div class="organic-shape bg-sage w-80 h-80 bottom-0 left-1/3"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center">
+     <div class="mb-12 scroll-reveal">
+      <p class="text-sm tracking-widest text-sage mb-3">CONTATO</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-petrol mb-6">Vamos conversar?</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="max-w-xl mx-auto space-y-8 scroll-reveal">
+      <p class="text-gray leading-relaxed">Se você está considerando iniciar um <strong>processo terapêutico online</strong>, entre em contato para agendar uma primeira conversa. Será um prazer conhecer você e entender como a <strong>psicoterapia cognitivo comportamental online</strong> pode ajudar.</p>
+      <div class="flex flex-col sm:flex-row items-center gap-4 justify-center"><a href="#" id="whatsapp-btn" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-3 px-10 py-4 text-sm tracking-wide">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg><span id="contact-cta">Agendar sessão</span> </a> <a href="https://www.instagram.com/psi.otaviohsilva/" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center gap-3 px-10 py-4 text-sm tracking-wide">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg><span>Seguir no Instagram</span> </a>
+      </div>
+      <p class="text-xs text-sage">Responderei em até 24 horas úteis.</p>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 bg-cream border-t border-petrol/10">
+    <div class="max-w-4xl mx-auto px-6">
+     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+       <p class="font-serif text-lg text-petrol" id="footer-name">OTAVIO H. SILVA</p>
+       <p class="text-xs text-gray mt-1" id="footer-crp">Psicólogo | CRP 06/194908</p>
+      </div>
+      <div class="flex items-center gap-6"><a href="#home" class="text-xs text-gray hover:text-petrol transition-colors">Início</a> <a href="#sobre" class="text-xs text-gray hover:text-petrol transition-colors">Sobre</a> <a href="#contato" class="text-xs text-gray hover:text-petrol transition-colors">Contato</a>
+      </div>
+     </div>
+     <div class="mt-8 pt-6 border-t border-petrol/5 text-center">
+      <p class="text-xs text-gray/60">© 2024 Todos os direitos reservados.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      professional_name: 'OTAVIO H. SILVA',
+      crp_number: 'CRP 06/194908',
+      tagline: 'Psicoterapeuta Cognitivo Comportamental',
+      about_title: 'Sobre',
+      whatsapp_number: '5512991344677',
+      cta_button_text: 'Agendar sessão',
+      background_color: '#e5eaeb',
+      surface_color: '#eff3f4',
+      text_color: '#3d4d50',
+      primary_action_color: '#5a7275',
+      secondary_action_color: '#8a9fa3'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = !answer.classList.contains('hidden');
+        
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        // Toggle current answer
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+    
+    // Specialty Accordion
+    document.querySelectorAll('.specialty-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.specialty-icon');
+        const isOpen = !answer.classList.contains('hidden');
+        
+        // Close all answers
+        document.querySelectorAll('.specialty-answer').forEach(a => a.classList.add('hidden'));
+        document.querySelectorAll('.specialty-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        // Toggle current answer
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+    
+    // Update floating WhatsApp button
+    function updateFloatingWhatsApp(whatsappNumber) {
+      const cleanWhatsapp = String(whatsappNumber || '5512991344677').replace(/\D/g, '');
+      const message = encodeURIComponent('Olá! Gostaria de agendar uma sessão.');
+      const whatsappUrl = `https://wa.me/${cleanWhatsapp}?text=${message}`;
+      const floatingBtn = document.getElementById('floating-whatsapp');
+      if (floatingBtn) {
+        floatingBtn.href = whatsappUrl;
+      }
+    }
+
+    async function onConfigChange(cfg) {
+      const name = cfg.professional_name || defaultConfig.professional_name;
+      const crp = cfg.crp_number || defaultConfig.crp_number;
+      const tagline = cfg.tagline || defaultConfig.tagline;
+      const aboutTitle = cfg.about_title || defaultConfig.about_title;
+      const ctaText = cfg.cta_button_text || defaultConfig.cta_button_text;
+      const whatsapp = cfg.whatsapp_number || defaultConfig.whatsapp_number;
+
+      document.getElementById('nav-name').textContent = name;
+      document.getElementById('hero-name').textContent = name;
+      document.getElementById('hero-crp').textContent = `Psicólogo | ${crp}`;
+      document.getElementById('hero-tagline').textContent = tagline;
+      document.getElementById('hero-cta').textContent = ctaText;
+      document.getElementById('about-title').textContent = aboutTitle;
+      document.getElementById('about-crp').textContent = crp;
+      document.getElementById('contact-cta').textContent = ctaText;
+      document.getElementById('footer-name').textContent = name;
+      document.getElementById('footer-crp').textContent = `Psicólogo | ${crp}`;
+
+      const cleanWhatsapp = String(whatsapp).replace(/\D/g, '');
+      const message = encodeURIComponent('Olá! Gostaria de agendar uma sessão.');
+      const whatsappUrl = `https://wa.me/${cleanWhatsapp}?text=${message}`;
+      const whatsappBtn = document.getElementById('whatsapp-btn');
+      if (whatsappBtn) {
+        whatsappBtn.href = whatsappUrl;
+      }
+      updateFloatingWhatsApp(whatsapp);
+
+      const bgColor = cfg.background_color || defaultConfig.background_color;
+      const surfaceColor = cfg.surface_color || defaultConfig.surface_color;
+      const textColor = cfg.text_color || defaultConfig.text_color;
+      const primaryColor = cfg.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = cfg.secondary_action_color || defaultConfig.secondary_action_color;
+
+      document.documentElement.style.setProperty('--color-cream', bgColor);
+      document.documentElement.style.setProperty('--color-warm-white', surfaceColor);
+      document.documentElement.style.setProperty('--color-gray', textColor);
+      document.documentElement.style.setProperty('--color-petrol', primaryColor);
+      document.documentElement.style.setProperty('--color-sage', secondaryColor);
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              config.secondary_action_color = value;
+              window.elementSdk.setConfig({ secondary_action_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['professional_name', cfg.professional_name || defaultConfig.professional_name],
+        ['crp_number', cfg.crp_number || defaultConfig.crp_number],
+        ['tagline', cfg.tagline || defaultConfig.tagline],
+        ['about_title', cfg.about_title || defaultConfig.about_title],
+        ['whatsapp_number', cfg.whatsapp_number || defaultConfig.whatsapp_number],
+        ['cta_button_text', cfg.cta_button_text || defaultConfig.cta_button_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    onConfigChange(config);
+    
+    // Initialize floating WhatsApp on load
+    updateFloatingWhatsApp(config.whatsapp_number || defaultConfig.whatsapp_number);
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5a6a1d306bd249',t:'MTc2OTcwNzM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
