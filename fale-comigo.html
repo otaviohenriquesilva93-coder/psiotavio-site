@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otavio H. Silva | Primeira Conversa</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17929165296"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17929165296');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--color-petrol:#5a7275;
+--color-sage:#8a9fa3;
+--color-gray:#3d4d50;
+--color-cream:#e5eaeb;
+--color-warm-white:#eff3f4;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:'DM Sans',sans-serif;
+background:var(--color-warm-white);
+color:var(--color-gray);
+overflow-x:hidden;
+}
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+position:relative;
+}
+.organic{
+position:absolute;
+border-radius:60% 40% 50% 50% / 50% 60% 40% 50%;
+opacity:.08;
+}
+.o1{width:400px;height:400px;background:var(--color-petrol);top:-100px;right:-100px;}
+.o2{width:320px;height:320px;background:var(--color-sage);bottom:-80px;left:-80px;}
+.container{
+max-width:1100px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:40px;
+position:relative;
+z-index:2;
+}
+.card{
+background:var(--color-cream);
+padding:40px;
+}
+.photo{
+text-align:center;
+}
+.photo img{
+max-width:100%;
+max-height:500px;
+object-fit:contain;
+}
+h1,h2{
+font-family:'Cormorant Garamond',serif;
+color:var(--color-petrol);
+}
+h1{font-size:3.2rem;margin:0;}
+.subtitle{letter-spacing:3px;color:var(--color-sage);font-size:.8rem}
+input,select,textarea{
+width:100%;
+padding:14px;
+border:1px solid rgba(90,114,117,.25);
+margin-top:8px;
+background:white;
+}
+label{display:block;margin-top:18px}
+button{
+width:100%;
+margin-top:24px;
+padding:16px;
+border:none;
+background:var(--color-petrol);
+color:white;
+cursor:pointer;
+font-size:15px;
+}
+button:hover{opacity:.92}
+.small{font-size:12px;color:var(--color-sage);margin-top:15px}
+.success{display:none;text-align:center;padding:30px}
+@media(max-width:900px){
+.container{grid-template-columns:1fr}
+h1{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="organic o1"></div>
+<div class="organic o2"></div>
+
+<div class="container">
+<div class="card photo">
+<p class="subtitle">PSICÓLOGO | CRP 06/194908</p>
+<h1>OTAVIO H. SILVA</h1>
+<p>Um espaço de acolhimento para quem convive com ansiedade, burnout, conflitos de relacionamento e dificuldades com autoestima.</p>
+<p><strong>Atendimento online para adultos.</strong></p>
+</div>
+
+<div class="card">
+<div id="form-area">
+<p class="subtitle">PRIMEIRO CONTATO</p>
+<h2>Vamos conversar?</h2>
+<p>Preencha as informações abaixo. Responderei pelo WhatsApp.</p>
+
+<form id="leadForm">
+<label>Nome
+<input required id="nome">
+</label>
+
+<label>Idade
+<input type="number" required min="18" max="120" id="idade">
+</label>
+
+<label>Faixa de investimento por sessão
+<select required id="investimento">
+<option value="">Selecione</option>
+<option>Até R$ 80</option>
+<option>R$ 80 a R$ 120</option>
+<option>R$ 120 a R$ 180</option>
+<option>Acima de R$ 180</option>
+</select>
+</label>
+
+<label>Descreva brevemente o que está acontecendo
+<textarea required rows="6" id="caso"></textarea>
+</label>
+
+<button type="submit">Enviar informações</button>
+</form>
+
+<p class="small">As informações são utilizadas apenas para contato profissional e protegidas pelo sigilo ético.</p>
+</div>
+
+<div id="success" class="success">
+<h2>Obrigado pelo contato.</h2>
+<p>Você será direcionado para o WhatsApp.</p>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e){
+e.preventDefault();
+
+gtag('event','conversion',{
+'send_to':'AW-17929165296/srZ2CJ2Tkv8bEPCzpeVC',
+'value':1.0,
+'currency':'BRL'
+});
+
+document.getElementById('form-area').style.display='none';
+document.getElementById('success').style.display='block';
+
+const nome=document.getElementById('nome').value;
+const idade=document.getElementById('idade').value;
+const investimento=document.getElementById('investimento').value;
+const caso=document.getElementById('caso').value;
+
+const texto=`Olá, meu nome é ${nome}.
+Idade: ${idade}
+Investimento: ${investimento}
+
+Relato:
+${caso}`;
+
+setTimeout(()=>{
+window.location.href="https://wa.me/5512991344677?text="+encodeURIComponent(texto);
+},1500);
+});
+</script>
+
+</body>
+</html>
