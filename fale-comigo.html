@@ -144,6 +144,10 @@ h1{font-size:2.5rem}
 <input required id="nome">
 </label>
 
+<label>Telefone (com DDD)
+<input required type="tel" id="telefone" placeholder="(12) 99999-9999">
+</label>
+
 <label>Idade
 <input type="number" required min="18" max="120" id="idade">
 </label>
@@ -192,11 +196,12 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
 e.preventDefault();
 
 const nome = document.getElementById('nome').value;
+const telefone = document.getElementById('telefone').value;
 const idade = document.getElementById('idade').value;
 const investimento = document.getElementById('investimento').value;
 const caso = document.getElementById('caso').value;
 
-const dados = { nome, idade, investimento, caso };
+const dados = { nome, telefone, idade, investimento, caso };
 
 // Mostra estado de carregamento
 document.getElementById('form-area').style.display = 'none';
