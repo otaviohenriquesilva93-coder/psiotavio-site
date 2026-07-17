@@ -95,6 +95,24 @@ font-size:15px;
 button:hover{opacity:.92}
 .small{font-size:12px;color:var(--color-sage);margin-top:15px}
 .success{display:none;text-align:center;padding:30px}
+.success p{font-size:16px;line-height:1.6;margin-top:16px}
+.whatsapp-final-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:100%;
+margin-top:24px;
+padding:16px;
+border:none;
+background:#25D366;
+color:white;
+text-decoration:none;
+font-size:15px;
+border-radius:4px;
+}
+.whatsapp-final-btn:hover{opacity:.92}
+.loading{display:none;text-align:center;padding:30px}
 @media(max-width:900px){
 .container{grid-template-columns:1fr}
 h1{font-size:2.5rem}
@@ -144,48 +162,77 @@ h1{font-size:2.5rem}
 <textarea required rows="6" id="caso"></textarea>
 </label>
 
-<button type="submit">Enviar informações</button>
+<button type="submit" id="submitBtn">Enviar informações</button>
 </form>
 
 <p class="small">As informações são utilizadas apenas para contato profissional e protegidas pelo sigilo ético.</p>
 </div>
 
+<div id="loading" class="loading">
+<p>Enviando...</p>
+</div>
+
 <div id="success" class="success">
-<h2>Obrigado pelo contato.</h2>
-<p>Você será direcionado para o WhatsApp.</p>
+<h2>Recebi suas informações</h2>
+<p>Obrigado por compartilhar um pouco do que você está vivendo. Vou ler com atenção e retornar em breve pelo WhatsApp.</p>
+<p>Se preferir adiantar o contato, é só clicar no botão abaixo.</p>
+<a href="#" id="whatsapp-final-btn" class="whatsapp-final-btn" target="_blank" rel="noopener noreferrer">Falar agora no WhatsApp</a>
 </div>
 </div>
 </div>
 </section>
 
 <script>
+// URL do Apps Script publicado como Web App
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZ9t5sOgSczcbDhl-dxMMw0nXjaK4yYO5XnWvjJ-4qCtFroqjWcpAPaIYuykBEs2rm6g/exec";
+
+const WHATSAPP_NUMBER = "5512991344677";
+
 document.getElementById('leadForm').addEventListener('submit', function(e){
 e.preventDefault();
 
-gtag('event','conversion',{
-'send_to':'AW-17929165296/srZ2CJ2Tkv8bEPCzpeVC',
-'value':1.0,
-'currency':'BRL'
+const nome = document.getElementById('nome').value;
+const idade = document.getElementById('idade').value;
+const investimento = document.getElementById('investimento').value;
+const caso = document.getElementById('caso').value;
+
+const dados = { nome, idade, investimento, caso };
+
+// Mostra estado de carregamento
+document.getElementById('form-area').style.display = 'none';
+document.getElementById('loading').style.display = 'block';
+
+// Envia os dados para a planilha via Apps Script
+// mode: 'no-cors' evita bloqueio do navegador; não conseguimos ler a resposta,
+// mas o doPost() do lado do Google é executado normalmente.
+fetch(APPS_SCRIPT_URL, {
+method: 'POST',
+mode: 'no-cors',
+headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+body: JSON.stringify(dados)
+})
+.catch(function(err){
+console.error('Erro ao enviar dados:', err);
+})
+.finally(function(){
+// Monta a mensagem genérica do botão de WhatsApp (sem dados sensíveis na URL)
+const mensagem = "Olá! Acabei de enviar minhas informações pelo site e gostaria de conversar o quanto antes, se possível.";
+const whatsappUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(mensagem);
+document.getElementById('whatsapp-final-btn').href = whatsappUrl;
+
+document.getElementById('loading').style.display = 'none';
+document.getElementById('success').style.display = 'block';
+});
 });
 
-document.getElementById('form-area').style.display='none';
-document.getElementById('success').style.display='block';
-
-const nome=document.getElementById('nome').value;
-const idade=document.getElementById('idade').value;
-const investimento=document.getElementById('investimento').value;
-const caso=document.getElementById('caso').value;
-
-const texto=`Olá, meu nome é ${nome}.
-Idade: ${idade}
-Investimento: ${investimento}
-
-Relato:
-${caso}`;
-
-setTimeout(()=>{
-window.location.href="https://wa.me/5512991344677?text="+encodeURIComponent(texto);
-},1500);
+// A conversão do Google Ads dispara SOMENTE quando a pessoa clica
+// no botão de WhatsApp da tela 2 — não no envio do formulário.
+document.getElementById('whatsapp-final-btn').addEventListener('click', function(){
+gtag('event', 'conversion', {
+'send_to': 'AW-17929165296/srZ2CJ2Tkv8bEPCzpeVC',
+'value': 1.0,
+'currency': 'BRL'
+});
 });
 </script>
 
